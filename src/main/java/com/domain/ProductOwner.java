@@ -14,33 +14,23 @@ import java.util.Set;
 @EqualsAndHashCode
 @ToString
 @Entity
-public class Programmer {
+@Table(name = "product_owners")
+public class ProductOwner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String name;
 
-    private String programLanguage;
-
-    @ManyToMany(mappedBy = "programmers")
+    @OneToMany
+    @JoinTable(name = "owner_programs", joinColumns = @JoinColumn(name = "product_owner_id"),
+            inverseJoinColumns = @JoinColumn(name = "program_id"))
     private Set<Program> programs = new HashSet<>();
 
-    public Programmer() {
+    public ProductOwner() {
     }
 
-    public Programmer(String name, String programLanguage) {
+    public ProductOwner(String name) {
         this.name = name;
-        this.programLanguage = programLanguage;
-    }
-
-    public Programmer(String name, Set<Program> programs) {
-        this.name = name;
-        this.programs = programs;
-    }
-
-    public void addProgram(Program program) {
-        this.programs.add(program);
     }
 }

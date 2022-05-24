@@ -6,11 +6,12 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Getter
 @Setter
-@EqualsAndHashCode
 @ToString
 @Entity
 public class Program {
@@ -21,19 +22,32 @@ public class Program {
 
     private String title;
 
-    private String language;
-
     @ManyToMany
     @JoinTable(name = "programmer_software", joinColumns = @JoinColumn(name = "program_id"),
             inverseJoinColumns = @JoinColumn(name = "programmer_id"))
-    private Set<Programmer> programmers;
+    private Set<Programmer> programmers = new HashSet<>();
 
     public Program() {
     }
 
-    public Program(String title, String language, Set<Programmer> programmers) {
+    public Program(String title) {
         this.title = title;
-        this.language = language;
-        this.programmers = programmers;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Program program = (Program) o;
+        return id == program.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
