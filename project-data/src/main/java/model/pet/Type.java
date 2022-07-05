@@ -1,4 +1,4 @@
-package com.model.pet;
+package model.pet;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

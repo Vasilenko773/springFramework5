@@ -1,6 +1,6 @@
-package com.model.pet;
+package model.pet;
 
-import com.model.Owner;
+import model.Owner;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
