@@ -4,11 +4,11 @@ import model.pet.Pet;
 
 import java.util.Set;
 
-public interface PetService {
+public interface PetService extends CRUDService<Pet, Integer> {
 
-    Pet findById(int id);
+   /* Pet findById(Integer id);
 
     Pet save(Pet pet);
 
-    Set<Pet> findAll();
+    Set<Pet> findAll();*/
 }
