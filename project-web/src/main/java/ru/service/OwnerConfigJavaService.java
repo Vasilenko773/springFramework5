@@ -1,11 +1,9 @@
 package ru.service;
 
-import org.springframework.stereotype.Service;
+public class OwnerConfigJavaService implements JavaConfigService {
 
-
-public class OwnerConfigJavaService {
-
-    public String string() {
-        return "String";
+    @Override
+    public String say() {
+        return "Work harder";
     }
 }
