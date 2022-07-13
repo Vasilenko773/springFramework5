@@ -1,13 +1,13 @@
 package config;
 
-import model.pet.Pet;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.ImportResource;
 import ru.service.JavaConfigService;
 import ru.service.OwnerConfigJavaService;
 
 @Configuration
+@ImportResource("classpath:spring-config.xml")
 public class JavaConfiguration {
 
     @Bean
@@ -26,7 +26,6 @@ public class JavaConfiguration {
     }
 
     @Bean
-    @Primary
     JavaConfigService vetService(PetServiceFactory petServiceFactory) {
         return petServiceFactory.getPetService("vet");
     }
