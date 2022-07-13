@@ -1,15 +1,13 @@
-package map;
+package service.map;
 
-import model.Owner;
+import model.pet.Pet;
 import service.CRUDService;
 
 import java.util.Set;
 
-public class OwnerMapService extends AbstractMapService<Owner, Integer> implements CRUDService<Owner, Integer> {
-
-
+public class PetMapService extends AbstractMapService<Pet, Integer> implements CRUDService<Pet, Integer> {
     @Override
-    public Set<Owner> findAll() {
+    public Set<Pet> findAll() {
         return super.findAll();
     }
 
@@ -19,17 +17,19 @@ public class OwnerMapService extends AbstractMapService<Owner, Integer> implemen
     }
 
     @Override
-    public void delete(Owner object) {
+    public void delete(Pet object) {
         super.delete(object);
     }
 
     @Override
-    public Owner save(Owner object) {
+    public Pet save(Pet object) {
         return super.save(object.getId(), object);
     }
 
     @Override
-    public Owner findById(Integer id) {
+    public Pet findById(Integer id) {
         return super.findById(id);
     }
 }
+
+

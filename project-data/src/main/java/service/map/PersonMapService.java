@@ -1,4 +1,4 @@
-package map;
+package service.map;
 
 import model.Person;
 import service.CRUDService;
