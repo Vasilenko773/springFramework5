@@ -1,8 +1,6 @@
-package service;
+package data.service;
 
-import model.Vet;
-
-import java.util.Set;
+import data.model.Vet;
 
 public interface VetService extends CRUDService<Vet, Integer> {
 

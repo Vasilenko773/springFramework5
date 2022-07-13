@@ -1,12 +1,14 @@
-package service.map;
+package data.service.map;
 
-import model.Owner;
-import org.springframework.stereotype.Component;
-import service.OwnerService;
+import data.model.Owner;
+import data.service.OwnerService;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Component
+@Service
+@Primary
 public class OwnerMapService extends AbstractMapService<Owner, Integer> implements OwnerService {
 
 

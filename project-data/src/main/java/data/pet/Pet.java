@@ -1,7 +1,7 @@
-package model.pet;
+package data.pet;
 
-import model.Entity;
-import model.Owner;
+import data.model.Entity;
+import data.model.Owner;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

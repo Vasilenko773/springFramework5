@@ -1,15 +1,11 @@
-package ru.bootstrap;
+package web.bootstrap;
 
-import model.Owner;
-import model.Vet;
-import org.springframework.beans.factory.annotation.Qualifier;
-import service.map.OwnerMapService;
+import data.model.Owner;
+import data.model.Vet;
+import data.service.OwnerService;
+import data.service.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import service.OwnerService;
-import service.PetService;
-import service.VetService;
-import service.map.VetMapService;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -17,10 +13,9 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-
-    public DataLoader() {
-        this.ownerService = new OwnerMapService();
-        this.vetService = new VetMapService();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override

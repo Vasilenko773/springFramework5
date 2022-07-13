@@ -1,10 +1,14 @@
-package service.map;
+package data.service.map;
 
-import model.Vet;
-import service.VetService;
+import data.model.Vet;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
+import data.service.VetService;
 
 import java.util.Set;
 
+@Service
+@Primary
 public class VetMapService extends AbstractMapService<Vet, Integer> implements VetService {
 
     @Override

@@ -1,13 +1,15 @@
-package ru.controllers;
+package web.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class VetController {
+public class IndexController {
 
-    @RequestMapping("/vets")
+    @RequestMapping({"", "/", "index", "index.html"})
     public String index() {
-        return "vets/index";
+        return "index";
     }
 }
+
+

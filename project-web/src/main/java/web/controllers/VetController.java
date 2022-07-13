@@ -1,14 +1,13 @@
-package ru.controllers;
+package web.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/owner")
-public class OwnerController {
+public class VetController {
 
-    @RequestMapping("/")
+    @RequestMapping("/vets")
     public String index() {
-        return "owner/index";
+        return "vets/index";
     }
 }

@@ -1,8 +1,6 @@
-package service;
+package data.service;
 
-import model.Owner;
-
-import java.util.Set;
+import data.model.Owner;
 
 public interface OwnerService extends CRUDService<Owner, Integer> {
 

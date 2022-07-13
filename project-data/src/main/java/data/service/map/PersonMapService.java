@@ -1,10 +1,12 @@
-package service.map;
+package data.service.map;
 
-import model.Person;
-import service.CRUDService;
+import data.model.Person;
+import data.service.CRUDService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PersonMapService extends AbstractMapService<Person, Integer> implements CRUDService<Person, Integer> {
 
     @Override

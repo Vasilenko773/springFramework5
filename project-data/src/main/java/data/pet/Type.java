@@ -1,8 +1,8 @@
-package model.pet;
+package data.pet;
 
+import data.model.Entity;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import model.Entity;
 
 @Getter
 @RequiredArgsConstructor
