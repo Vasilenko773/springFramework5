@@ -5,8 +5,12 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @Getter
-@RequiredArgsConstructor
 public class Type extends Entity {
 
     private final String name;
+
+    public Type(Integer id, String name) {
+        super(id);
+        this.name = name;
+    }
 }
