@@ -1,13 +1,12 @@
 package data.service.map;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import data.model.Entity;
 
-public abstract class AbstractMapService<T, ID> {
+import java.util.*;
 
-    protected Map<ID, T> map = new HashMap<>();
+public abstract class AbstractMapService<T extends Entity, ID extends Integer> {
+
+    protected Map<Integer, T> map = new HashMap<>();
 
     Set<T> findAll() {
         return new HashSet<>(map.values());
@@ -17,8 +16,16 @@ public abstract class AbstractMapService<T, ID> {
         return map.get(id);
     }
 
-    T save(ID id, T object) {
-      return map.put(id, object);
+    T save(T object) {
+        if (object != null) {
+            if (object.getId() == null) {
+                object.setId(nextId());
+            }
+            map.put(object.getId(), object);
+            return object;
+        } else {
+            throw new NullPointerException("Object cannot be null");
+        }
     }
 
     void deleteById(ID id) {
@@ -27,5 +34,9 @@ public abstract class AbstractMapService<T, ID> {
 
     void delete(T object) {
         map.entrySet().removeIf(i -> i.getValue().equals(object));
+    }
+
+    private Integer nextId() {
+        return map.keySet().isEmpty() ? 1 : Collections.max(map.keySet()) + 1;
     }
 }

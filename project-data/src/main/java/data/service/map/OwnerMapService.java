@@ -29,7 +29,7 @@ public class OwnerMapService extends AbstractMapService<Owner, Integer> implemen
 
     @Override
     public Owner save(Owner object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override
@@ -39,6 +39,6 @@ public class OwnerMapService extends AbstractMapService<Owner, Integer> implemen
 
     @Override
     public Owner findByLastName(String lastName) {
-        return super.findAll().stream().filter(i -> i.getLastName().equals(lastName)).findFirst().orElse(new Owner(null, null, null));
+        return super.findAll().stream().filter(i -> i.getLastName().equals(lastName)).findFirst().orElse(new Owner(null, null));
     }
 }

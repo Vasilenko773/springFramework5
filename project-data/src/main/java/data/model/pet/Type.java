@@ -1,4 +1,4 @@
-package data.pet;
+package data.model.pet;
 
 import data.model.Entity;
 import lombok.Getter;
@@ -9,8 +9,7 @@ public class Type extends Entity {
 
     private final String name;
 
-    public Type(Integer id, String name) {
-        super(id);
+    public Type(String name) {
         this.name = name;
     }
 }

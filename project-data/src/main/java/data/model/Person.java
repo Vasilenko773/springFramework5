@@ -9,8 +9,7 @@ public class Person extends Entity{
     private final String firstName;
     private final String lastName;
 
-    public Person(Integer id, String firstName, String lastName) {
-        super(id);
+    public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }

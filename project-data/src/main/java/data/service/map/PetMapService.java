@@ -1,6 +1,6 @@
 package data.service.map;
 
-import data.pet.Pet;
+import data.model.pet.Pet;
 import data.service.CRUDService;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +25,7 @@ public class PetMapService extends AbstractMapService<Pet, Integer> implements C
 
     @Override
     public Pet save(Pet object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override

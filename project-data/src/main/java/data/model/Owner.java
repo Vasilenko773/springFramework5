@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class Owner extends Person {
 
-    public Owner(Integer id, String firstName, String lastName) {
-        super(id, firstName, lastName);
+    public Owner(String firstName, String lastName) {
+        super(firstName, lastName);
     }
 }

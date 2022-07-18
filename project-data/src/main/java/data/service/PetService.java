@@ -1,6 +1,6 @@
 package data.service;
 
-import data.pet.Pet;
+import data.model.pet.Pet;
 
 public interface PetService extends CRUDService<Pet, Integer> {
 
