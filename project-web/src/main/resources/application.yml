@@ -1,5 +1,0 @@
-#Пример заполнения .yml файла
-config:
-  username: username
-  password: password
-  url: jdbc:postgresql://127.0.0.1:5432/url
