@@ -12,8 +12,12 @@ import java.util.Set;
 public class Owner extends Person {
 
     private Set<Pet> pets = new HashSet<>();
+    private Address address;
+    private String telephone;
 
-    public Owner(String firstName, String lastName) {
+    public Owner(String firstName, String lastName, Address address, String telephone) {
         super(firstName, lastName);
+        this.address = address;
+        this.telephone = telephone;
     }
 }

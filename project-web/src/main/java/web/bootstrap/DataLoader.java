@@ -1,5 +1,6 @@
 package web.bootstrap;
 
+import data.model.Address;
 import data.model.Owner;
 import data.model.Vet;
 import data.service.OwnerService;
@@ -23,11 +24,11 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("Сохранение владельцев клиник");
-        Owner jon = new Owner("Jon", "Pediqry");
+        Owner jon = new Owner("Jon", "Pediqry", new Address("Neringry", "Lenina"), "89244659888");
 
         ownerService.save(jon);
         System.out.println("Сохранение владельцев клиник");
-        Owner mrPeet = new Owner("Peet", "Potter");
+        Owner mrPeet = new Owner("Peet", "Potter", new Address("Anapa", "Primorskaya"), "89244655432");
         ownerService.save(mrPeet);
 
         System.out.println("Сохранение ветеринаров");
