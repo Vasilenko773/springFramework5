@@ -7,6 +7,8 @@ import data.service.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
+
 @Component
 public class DataLoader implements CommandLineRunner {
 
@@ -29,10 +31,10 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(mrPeet);
 
         System.out.println("Сохранение ветеринаров");
-        Vet suzy = new Vet("Suzanna", "Pattison");
+        Vet suzy = new Vet("Suzanna", "Pattison", new HashSet<>());
         vetService.save(suzy);
 
-        Vet richard = new Vet("Richard", "Kapton");
+        Vet richard = new Vet("Richard", "Kapton", new HashSet<>());
         vetService.save(richard);
     }
 }
